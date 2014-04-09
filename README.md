@@ -36,7 +36,7 @@ Pazz will prompt for your master password (which won't be shown). This is the ma
  > Prompt for a username once off, and store this (hashed?) in a configuration location. Use this as part of the seed. Useful?
 
 * Chrome extension
- > Last pass style chrome extension that can fill fields and guess the site key based on URL.
+ > DONE! https://github.com/pazzapp/pazz-chrome
 
 * Static website
  > Simple JS only website implementing the app.
