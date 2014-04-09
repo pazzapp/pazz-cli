@@ -26,3 +26,20 @@ Pazz will prompt for your master password (which won't be shown). This is the ma
     Enter a site (blank when finished): stackoverflow
     n_gVMKKvvu@h62-vLkCP
     Enter a site (blank when finished):
+
+# Possible enhancements
+
+* PIN / secondary password
+ > Along with the master password use an optional pin as part of the seed. That way we could potentially store the hashed master password on a trusted device and only require the user enter a pin.
+
+* Username
+ > Prompt for a username once off, and store this (hashed?) in a configuration location. Use this as part of the seed. Useful?
+
+* Chrome extension
+ > Last pass style chrome extension that can fill fields and guess the site key based on URL.
+
+* Static website
+ > Simple JS only website implementing the app.
+
+* Mobile apps
+ > Wrap the above into android and osx apps?
