@@ -1,5 +1,4 @@
 #! /usr/bin/ruby
-require 'digest/sha2'
 require 'digest/sha1'
 
 class Pazz
@@ -11,7 +10,7 @@ class Pazz
 
   def initialize(password)
     # SHA it and store SHA2 for the seed
-    @seed = Digest::SHA2.hexdigest(password)
+    @seed = Digest::SHA1.hexdigest(password)
   end
 
   def get_pass(site)
