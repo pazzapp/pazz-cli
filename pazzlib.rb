@@ -7,14 +7,15 @@ class Pazz
   AMBIGUOUS_TOKENS    = %w( 1 l I O o 0 )
   SPECIAL_CHARACTERS  = %w( ! @ # $ % ^ & * - _ ? )
   TOKENS =  ALPHA_NUMERIC + SPECIAL_CHARACTERS - AMBIGUOUS_TOKENS
+  SALT = "better_than_nothing"
 
   def initialize(password)
     # SHA it and store SHA2 for the seed
-    @seed = Digest::SHA1.hexdigest(password)
+    @seed = Digest::SHA1.hexdigest(password + SALT)
   end
 
   def get_pass(site)
-    Digest::SHA1.hexdigest(@seed + site)  # use SHA on seed + site
+    Digest::SHA1.hexdigest(@seed + site + SALT)  # use SHA on seed + site
       .scan(/../)                         # pull out hex pairs
       .map(&:hex)                         # parse hex to dec
       .map{|x| TOKENS[x % TOKENS.length]}  # use to index token array
